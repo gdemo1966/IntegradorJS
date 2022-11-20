@@ -1,0 +1,309 @@
+:root {
+  --verdeOscuro: #1d741f;
+  --verdeMedio: #87BA54;
+  --verdeCaja: #57b36b;
+  --verdeClaro: #aceb90;
+  --crema: #e3f2b7;
+  --cemento: #D7D7D7;
+  --naranjaFuerte: #ef5715;
+  --naranjaMedio: #f57c00;
+  --naranjaSuave: #ffb74d;
+  --tiza: #f6f9f5;
+  --gray: #7e7373;
+  --black: #000000;
+}
+
+/*---iniciar sesion---*/
+#inicioSesion {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.imagenInicio {
+  background-image: url(./img/Libros_de_1a3.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 0 0 400px;
+  height: 400px;
+  margin: 45px auto;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.sesion {
+    z-index: 2;
+    background: var(--tiza);
+    color: var(--verdeOscuro);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 40%;
+    height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    border-radius: 38px;
+    gap: 10px;
+    min-width: 320px;
+}
+
+.sesion h2 {
+    font-size: 25px;
+}
+
+.sesion__cajas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 90%;
+}
+
+.sesion__cajas label {
+    padding: 30px 0px 5px;
+}
+
+.sesion__cajas input {
+    border-radius: 2px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    font-size: 18px;
+    text-align: center;
+    color: var(--color-textos-objeto);
+}
+
+.sesion__cajas input:focus {
+    outline: 3px solid #11100b;
+
+}
+
+.sesion button {
+    height: 40px;
+    color: var(--verdeOscuro);
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0px 1px 0px #000000
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: solid;
+    border-radius: 8px;
+    border-color: var(--verdeOscuroscuro);
+    background-color: var(--tiza);
+}
+
+
+.sesion button:hover {
+    background-color: var(--verdeOscuro);
+    color: var(--tiza);
+    border-color: var(--black);
+    transition: all 0.5s;
+}
+
+.sesion a {
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-textos-objeto);
+}
+
+
+.sesion a span {
+    color: rgb(247, 59, 59);
+    font-weight: 600;
+}
+
+.sesion a:hover span {
+    font-weight: 800;
+}
+
+@media screen and (max-width: 1024px) {
+    .inicio {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .imagenInicio {
+        width: 400px;
+    }
+
+    .sesion {
+        margin: 0 5px;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .inicio {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .imagenInicio {
+        display: none;
+    }
+
+    .sesion {
+        overflow: hidden;
+        margin: 0 auto;
+    }
+}
+
+
+/* Sección de registro */
+
+#formSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 5px auto;
+    gap: 20px;
+    padding: 35px;
+    flex-wrap: wrap;
+}
+
+.imagenRegistro {
+  background-image: url(./img/Libros_de_6a8.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 0 0 400px;
+  height: 400px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.Form_Registro_container {
+    z-index: 2;
+    background: var(--tiza);
+    color: var(--verdeOscuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    position: relative;
+    border-radius: 38px;
+    gap: 20px;
+    max-width: 500px;
+    min-width: 320px;    
+}
+    
+.Form_Registro_container h2 {
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+}
+
+.Form_Registro {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.Form_Registro input {
+    width: 80%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    color: var(--black);
+    padding: 5px;
+}
+
+.Form_Registro input:focus {
+    outline: none;
+    border-bottom-color: var(--naranjaSuave);
+}
+
+.Form_Registro input::placeholder {
+    text-align: center;
+    font-size: 14px;
+}
+
+.form_chekbox_container {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.Form_Registro_container button {
+    height: 40px;
+    color: var(--verdeOscuro);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: solid;
+    border-radius: 8px;
+    border-color: var(--verdeOscuroscuro);
+    background-color: var(--tiza);
+}
+
+.Form_Registro_container button:hover {
+    background-color: var(--verdeOscuro);
+    color: var(--tiza);
+    border-color: var(--black);
+}
+
+.Form_Registro_container a {
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--black);
+    padding: 10px;
+}
+
+/* .Form_Registro_container a:hover {
+    color: var(--naranjaFuerte);
+    font-weight: bold;
+} */
+
+.Form_Registro_container a span {
+    color: var(--naranjaMedio);
+    font-weight: 600;
+}
+
+.Form_Registro_container a:hover span {
+    font-weight: 800;
+}
+
+@media screen and (max-width: 1024px) {
+    .imagenRegistro {
+        width: 50%;
+    }
+
+    #formSection {
+        overflow: hidden;
+        justify-content: center;
+        margin: 50px 0;
+        gap: 15px;
+        padding: 15px;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    .imagenRegistro {
+        display: none;
+    }
+
+    #formSection {
+        margin: auto;
+    }
+
+    .Form_Registro_container {
+        min-width: 345px;
+        flex-wrap: nowrap;
+    }
+}
