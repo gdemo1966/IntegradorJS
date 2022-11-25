@@ -20,7 +20,7 @@ const barsBtn = document.querySelector(".menu-label");
 const cartMenu = document.querySelector(".cart");
 //  Menú (Hamburguesa)
 const barsMenu = document.querySelector(".navbar-list");
-//  Overlay para tirar facha abajo del menú hamburguesa y el cart.
+//  Overlay estético para menú hamburguesa y el cart.
 const overlay = document.querySelector(".overlay");
 //  Modal de agregado al carrito.
 const successModal = document.querySelector(".add-modal");
