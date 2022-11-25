@@ -1,8 +1,8 @@
-// Contenedor de productn-comprartos
+// Contenedor de productos
 const products = document.querySelector(".productos-container");
 // Contenedor de productos del carrito
 const productsCart = document.querySelector(".cart-container");
-//El total en precio del carrito
+//El total acumulado en el carrito
 const total = document.querySelector(".total");
 // El contenedor de las categorías
 const categories = document.querySelector(".categorias");
@@ -69,6 +69,9 @@ const renderProduct = (product) => {
 };
 
 const renderDividedProducts = (index = 0) => {
+  // Agregué el testeo de la existencia de "products", para poder compartir el renderizado del
+  // carrito en el header en los .html de Inicio de Sesión y Registro.
+  if (!products) return;
   products.innerHTML += productsController.dividedProducts[index]
     .map(renderProduct) 
     .join("");
@@ -83,7 +86,6 @@ const renderFilteredProducts = (category) => {
 
 const renderProducts = (index = 0, category = undefined) => {
   if (!category) {
-    // !undefined === true
     renderDividedProducts(index);
     return;
   }
@@ -92,8 +94,7 @@ const renderProducts = (index = 0, category = undefined) => {
 
 
 // Manejo de FILTROS
-
-// funcion para cambiar todos los estados relacionados a los filtros
+//Cambia estados relacionados a los filtros
 const changeFilterState = (e) => {
   const selectedCategory = e.target.dataset.categoria;
   // necesito cambiar el estado visual de los botones
@@ -102,7 +103,7 @@ const changeFilterState = (e) => {
   changeShowMoreBtnState(selectedCategory);
 };
 
-// funcion para cambiar el estado visual de las categorias (la categoria seleccionada)
+//Cambiar el estado visual de las categorias (la categoria seleccionada)
 const changeBtnActiveState = (selectedCategory) => {
   const categories = [...categoriesList];
   categories.forEach((categoryBtn) => {
@@ -114,7 +115,7 @@ const changeBtnActiveState = (selectedCategory) => {
   });
 };
 
-// evaluar si sacamos o no el boton mostrar mas
+//Evalua si muestra o no el botón "Ver más"
 const changeShowMoreBtnState = (category) => {
   if (!category) {
     btnCargar.classList.remove("hidden");
@@ -284,7 +285,7 @@ const addProduct = (e) => {
     addUnitToProduct(product);
     showSuccessModal("Se agregó una unidad del producto al carrito");
   } else {
-    //Que no exista el product
+    //No existe el producto en el carrito, lo creo.
     createCartProduct(product);
     showSuccessModal("El producto se ha agregado al carrito");
   }
@@ -342,8 +343,8 @@ const completeCartAction = (confirmMsg, successMsg) => {
     alert(successMsg);
   }
 };
-//
-//
+
+
 const completeBuy = () => {
   completeCartAction(
     "¿Desea completar su compra?",
@@ -360,8 +361,10 @@ const deleteCart = () => {
 
 const init = () => {
   renderProducts();
-  categories.addEventListener("click", applyFilter);
-  btnCargar.addEventListener("click", showMoreProducts);
+  if (categories) {
+    categories.addEventListener("click", applyFilter);
+    btnCargar.addEventListener("click", showMoreProducts); 
+  }
   barsBtn.addEventListener("click", toggleMenu);
   cartBtn.addEventListener("click", toggleCart);
   barsMenu.addEventListener("click", closeOnClick);
@@ -369,12 +372,17 @@ const init = () => {
   overlay.addEventListener("click", closeOnOverlayClick);
   document.addEventListener("DOMContentLoaded", renderCart);
   document.addEventListener("DOMContentLoaded", showTotal);
-  products.addEventListener("click", addProduct);
+
   productsCart.addEventListener("click", handleQuantity);
+  if (products){
+    products.addEventListener("click", addProduct);
+  }
   btnComprar.addEventListener("click", completeBuy);
   btnVaciar.addEventListener("click", deleteCart);
+
   disableBtn(btnComprar);
   disableBtn(btnVaciar);
+
 };
 
 init();
