@@ -16,35 +16,68 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
 		integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="./assets/iniciosesion.css" />
+	<!-- <link rel="stylesheet" href="./assets/iniciosesion.css" />
+	<link rel="stylesheet" href="./assets/styles.css" /> -->
+	<!-- ESTILOS -->
 	<link rel="stylesheet" href="./assets/styles.css" />
+	<link rel="stylesheet" href="./assets/iniciosesion.css" />
+		  
+	<link rel="stylesheet" href="./assets/mediaqueries.css" />
+	<link rel="stylesheet" href="./assets/animaciones.css" />
 </head>
 
 <body>
 	<!-- Header -->
 	<div class="section-container header-container">
 		<header class="header">
+			<!-- Logo -->
 			<div class="logo-container">
 				<a href="index.html">
-				  <img src="./assets/img/VozYcuento-final.png" alt="Logo de Librería Voz y Cuento" />
+					<img src="./assets/img/VozYcuento-final.png" alt="Logo de Librería Voz y Cuento" />
 				</a>
 			</div>
+
+			<!-- Navbar -->
 			<nav class="navbar">
-				<label for="toggle-menu"><i class="fas fa-bars"></i></label>
-				<input type="checkbox" id="toggle-menu" />
+				<!-- Manejo menú hamburguesa -->
+				<div class="menu-label">
+					<i class="fas fa-bars menu-icon"></i>
+				</div>
+
+				<!-- Navbar List -->
 				<ul class="navbar-list">
 					<li><a href="index.html#hero">Inicio</a></li>
 					<li><a href="index.html#quienes_somos">Quienes somos</a></li>
 					<li><a href="index.html#colecciones">Colecciones</a></li>
-					<li><a href="index.html#caminos-de-lectura">Caminos de lectura</a></li>
 					<li><a href="index.html#contacto">Contacto</a></li>
 					<li><a href="index.html#tienda">Tienda</a></li>
 				</ul>
+
+				<!-- Icono del carrito -->
+				<div class="cart-icon-container">
+					<i class="fa-solid fa-cart-shopping cart-icon"></i>
+				</div>
+
+				<!-- Carrito -->
+				<div class="cart">
+					<h2>Tus Elegidos</h2>
+					<div class="cart-container">
+
+					</div>
+					<span class="divisor"></span>
+					<div class="cart-total">
+						<p>Total:</p>
+						<span class="total">$ 0.00</span>
+					</div>
+					<button class="btn-comprar">Comprar</button>
+					<button class="btn-vaciar">Vaciar carrito</button>
+				</div>
+				<div class="overlay"></div>
 			</nav>
 		</header>
 	</div>
 
-    <!-- Formulario de Registración  -->
+	<!-- Formulario de Registración  -->
 	<section class="section" id="formSection">
 		<div class="imagenRegistro"></div>
 

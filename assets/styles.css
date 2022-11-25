@@ -140,20 +140,12 @@ button:hover {
   font-weight: 700;
 }
 
-/*  Aca comienza codigo copiado */
 /* Menú hamburguesa */
 .menu-label {
   display: none;
-  /* padding: 10px; */
 }
 
 /*carrito*/
-/* .cart-icon-container {
-  display: flex;
-  order: 2;
-  cursor: pointer;
-} */
-
 .cart-icon {
   border: 1px solid var(--verdeOscuro);
   padding: 12px 18px;
@@ -313,13 +305,15 @@ button:hover {
     display: flex;
   }
 
-  .navbar-list {
+  /* .navbar-list {
     position: absolute;
     background-color: var(--cemento);
     border: solid;
     border-color: var(--gray);
     border-radius: 20px;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transition: all 0.9s ease-out;
     top: 100px;
     left: 50%;
@@ -327,7 +321,7 @@ button:hover {
     height: calc(100vh - 100px);
     z-index: 9999;
     display: none;
-  }
+  } */
 
   .menu-label {
     display: flex;

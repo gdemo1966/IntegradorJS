@@ -264,11 +264,6 @@
     padding: 10px;
 }
 
-/* .Form_Registro_container a:hover {
-    color: var(--naranjaFuerte);
-    font-weight: bold;
-} */
-
 .Form_Registro_container a span {
     color: var(--naranjaMedio);
     font-weight: 600;
