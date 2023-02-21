@@ -1,24 +1,10 @@
-:root {
-  --verdeOscuro: #1d741f;
-  --verdeMedio: #87BA54;
-  --verdeCaja: #57b36b;
-  --verdeClaro: #aceb90;
-  --crema: #e3f2b7;
-  --cemento: #D7D7D7;
-  --naranjaFuerte: #ef5715;
-  --naranjaMedio: #f57c00;
-  --naranjaSuave: #ffb74d;
-  --tiza: #f6f9f5;
-  --gray: #7e7373;
-  --black: #000000;
-}
-
 /*---iniciar sesion---*/
 #inicioSesion {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
 }
+
 
 .imagenInicio {
   background-image: url(./img/Libros_de_1a3.png);
@@ -27,7 +13,7 @@
   background-size: cover;
   flex: 0 0 400px;
   height: 400px;
-  margin: 45px auto;
+  /* margin: 45px auto; */
   border-radius: 20px;
   padding: 20px;
 }

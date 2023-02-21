@@ -14,10 +14,15 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+
+  height:100%;
+  box-sizing: border-box;
 }
 
 body {
   width: 100%;
+  /* min-height: 100%; */
+  height: 100%;
   background: rgb(29,116,31);
   background: linear-gradient(90deg, rgba(29,116,31,1) 0%, rgba(172,235,144,1) 75%, rgba(227,242,183,1) 100%);
   color: var(--black);
@@ -35,7 +40,10 @@ body {
   --naranjaSuave: #ffb74d;
   --tiza: #f6f9f5;
   --gray: #7e7373;
+  --footer: #bfbfbf;
   --black: #000000;
+
+  --headerHeight: 100px;
 }
 
 .section-container {
@@ -43,6 +51,8 @@ body {
 }
 
 .section {
+  position: relative;  /*Feb 2023*/
+  top: 100px;          /*Feb 2023*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +84,8 @@ button:hover {
 /*Header*/
 
 .header-container {
-  position: sticky;
+  position: fixed;  /*Feb 2023 - Antes sticky*/
+  width: 100%;      /*Feb 2023*/
   top: 0%;
   background-color: var(--tiza);
   z-index: 9999;
@@ -83,7 +94,7 @@ button:hover {
 .header {
   margin: 0 auto;
   max-width: 1300px;
-  height: 100px;
+  height: var(--headerHeight);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -159,7 +170,7 @@ button:hover {
 
 .cart {
   position: absolute;
-  top: 65px;
+  top: var(--headerHeight);
   right: 0;
   padding: 50px 30px;
   background: linear-gradient(to top, #b2bfe0, var(--cemento));
@@ -894,10 +905,11 @@ button:hover {
   align-items: center;
   justify-content: center;
   width: 40%;
-  height: 500px;
+  /* height: 500px; */
   position: relative;
   border-radius: 38px;
   gap: 20px;
+  padding: 2%;
   max-width: 500px;
   min-width: 320px;    
 }
@@ -954,17 +966,27 @@ button:hover {
 }
 
 /* footer */
+/* .contenedor-wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+} */
 
-.footer {
-  width: 95%;
-  background-color: var(--cemento);
+.footer {                              
+  /* position: relative;  Feb 2023 */
+  /* top: 100px;          Feb 2023 */
+  /* width: 95%; */    /*Comentado Feb 2023*/
+  position: relative;
+  bottom: 0%;
+  background-color: var(--footer);
   display: flex;
   justify-content: space-between;
-  max-width: 1300px;
-  margin: 0 auto;
+  width: 100%;
+  /* max-width: 1300px; */
+  margin-top: 7%;
   flex-wrap: wrap;
   gap: 50px;
-  padding: 30px;
+  padding: 30px 10px;
 }
 
 .footer p {
@@ -997,6 +1019,7 @@ button:hover {
 @media (max-width: 945px) {
   .footer {
     gap: 40px;
+    margin-top: 15%;
   }
 
   .footer-info {
@@ -1009,7 +1032,8 @@ button:hover {
 .whatsapp {
    font-size: 30px;
    position: sticky;
-   left: 90%; bottom: 15px;
+   left: 90%; 
+   bottom: 17%;
    color: #fafafa;
    cursor: pointer;
    background-color: #63dd58;;

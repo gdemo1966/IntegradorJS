@@ -166,7 +166,7 @@ const toggleCart = () => {
 };
 
 const closeOnClick = (e) => {
-  if (!e.target.classList.contains("navbar-link")) return;
+  if (!e.target.classList.contains("navbar-list")) return;   /*Antes navbar-link*/
   barsMenu.classList.remove("open-menu");
   overlay.classList.remove("show-overlay");
 };
@@ -179,6 +179,15 @@ const closeOnScroll = () => {
     return;
   barsMenu.classList.remove("open-menu");
   cartMenu.classList.remove("open-cart");
+  overlay.classList.remove("show-overlay");
+};
+
+const closeOnResize = () => {
+  if (
+    !barsMenu.classList.contains("open-menu") 
+  )
+    return;
+  barsMenu.classList.remove("open-menu");
   overlay.classList.remove("show-overlay");
 };
 
@@ -369,6 +378,7 @@ const init = () => {
   cartBtn.addEventListener("click", toggleCart);
   barsMenu.addEventListener("click", closeOnClick);
   window.addEventListener("scroll", closeOnScroll);
+  window.addEventListener("resize", closeOnResize);
   overlay.addEventListener("click", closeOnOverlayClick);
   document.addEventListener("DOMContentLoaded", renderCart);
   document.addEventListener("DOMContentLoaded", showTotal);
