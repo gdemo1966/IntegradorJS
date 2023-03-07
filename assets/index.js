@@ -24,7 +24,7 @@ const barsMenu = document.querySelector(".navbar-list");
 const overlay = document.querySelector(".overlay");
 //  Modal de agregado al carrito.
 const successModal = document.querySelector(".add-modal");
-//  Modal de agregado al carrito.
+//  Boton de vaciado del carrito.
 const btnVaciar = document.querySelector(".btn-vaciar");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
